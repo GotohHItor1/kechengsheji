@@ -1,0 +1,40 @@
+# IDE自动生成的垃圾文件
+.idea/
+*.iml
+*.iws
+*.ipr
+.vscode/
+*.swp
+*.swo
+
+# Python垃圾
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.egg-info/
+dist/
+build/
+*.whl
+
+# C/C++垃圾
+*.o
+*.obj
+*.exe
+*.out
+*.app
+*.dll
+*.so
+*.dylib
+
+# Java垃圾
+*.class
+target/
+*.jar
+*.war
+
+# 系统垃圾
+.DS_Store
+Thumbs.db
+*.log
+

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>芒果社区 - 留言板</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/index.css">
+    <style>
+        .message-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            margin-top: 50px;
+        }
+        .message-form {
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #eee;
+        }
+        .message-item {
+            padding: 15px;
+            border: 1px solid #eee;
+            border-radius: 5px;
+            margin-bottom: 15px;
+        }
+        .message-author {
+            font-weight: bold;
+            color: #007bff;
+        }
+        .message-time {
+            font-size: 12px;
+            color: #999;
+            margin-left: 10px;
+        }
+        .message-content {
+            margin-top: 10px;
+            line-height: 1.6;
+        }
+    </style>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            
+            checkLoginStatus();
+
+            
+            loadMessages();
+
+            
+            $('#messageForm').submit(function(e) {
+                e.preventDefault();
+                const content = $('#content').val().trim();
+                if (!content) {
+                    alert('留言内容不能为空！');
+                    return;
+                }
+
+                $.ajax({
+                    url: 'api/submit_message.php',
+                    type: 'POST',
+                    data: {content: content},
+                    dataType: 'json',
+                    success: function(res) {
+                        if (res.code === 1) {
+                            alert(res.msg);
+                            $('#content').val('');
+                            loadMessages(); 
+                        } else {
+                            alert(res.msg);
+                            if (res.code === 0 && res.msg === '请先登录') {
+                                window.location.href = 'login.html';
+                            }
+                        }
+                    },
+                    error: function() {
+                        alert('网络错误，请重试！');
+                    }
+                });
+            });
+
+            
+            function checkLoginStatus() {
+                $.ajax({
+                    url: 'api/check_login.php',
+                    type: 'GET',
+                    dataType: 'json',
+                    success: function(res) {
+                        if (res.code === 0) {
+                            $('#messageForm').html('<div class="alert alert-warning">请<a href="login.html">登录</a>后留言</div>');
+                        }
+                    }
+                });
+            }
+
+            
+            function loadMessages() {
+                $.ajax({
+                    url: 'api/get_message.php',
+                    type: 'GET',
+                    dataType: 'json',
+                    success: function(res) {
+                        if (res.code === 1 && res.data.length > 0) {
+                            let html = '';
+                            res.data.forEach(item => {
+                                html += `
+                                <div class="message-item">
+                                    <div class="message-author">
+                                        ${item.username}
+                                        <span class="message-time">${item.create_time}</span>
+                                    </div>
+                                    <div class="message-content">${item.content}</div>
+                                </div>
+                                `;
+                            });
+                            $('#messageList').html(html);
+                        } else {
+                            $('#messageList').html('<div class="text-center text-muted">暂无留言</div>');
+                        }
+                    },
+                    error: function() {
+                        $('#messageList').html('<div class="text-center text-danger">留言加载失败</div>');
+                    }
+                });
+            }
+        });
+    </script>
+</head>
+<body>
+    <nav style="position: fixed; top: 0; left: 0; right: 0; height: 130px; padding: 0 30px; background: linear-gradient(135deg, #2d3436 0%, #000000 100%); box-shadow: 0 4px 12px rgba(0,0,0,0.2); border-bottom: 2px solid #ffc107; z-index: 9999; display: flex; align-items: center; justify-content: space-between;">
+        <a href="index.html" style="font-size: 32px; font-weight: 700; color: #fff; text-shadow: 0 2px 4px rgba(0,0,0,0.3); letter-spacing: 1px; text-decoration: none;">芒果社区</a>
+        <div style="display: flex; gap: 50px; line-height: 1; margin: 0;">
+            <a href="index.html" style="font-size: 18px; color: #fff; text-decoration: none; padding: 12px 20px; border-radius: 8px; transition: all 0.3s ease;">首页</a>
+            <a href="register.html" style="font-size: 18px; color: #fff; text-decoration: none; padding: 12px 20px; border-radius: 8px; transition: all 0.3s ease;">注册</a>
+            <a href="login.html" style="font-size: 18px; color: #fff; text-decoration: none; padding: 12px 20px; border-radius: 8px; transition: all 0.3s ease;">登录</a>
+            <a href="volunteer.html" style="font-size: 18px; color: #fff; text-decoration: none; padding: 12px 20px; border-radius: 8px; transition: all 0.3s ease;">志愿活动</a>
+            <a href="message_board.html" style="font-size: 18px; color: #fff; text-decoration: none; padding: 12px 20px; border-radius: 8px; transition: all 0.3s ease; background: #ffc107; color: #2d3436 !important; font-weight: 600;">留言板</a>
+        </div>
+    </nav>
+
+    <div class="container message-container">
+        <h2 class="page-title text-center mb-4">芒果社区留言板</h2>
+        
+        
+        <div class="message-form">
+            <form id="messageForm">
+                <div class="form-group">
+                    <label for="content">我要留言</label>
+                    <textarea class="form-control" id="content" rows="3" placeholder="请输入留言内容（文明发言）"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">提交留言</button>
+            </form>
+        </div>
+
+        
+        <div id="messageList"></div>
+
+        <div class="text-center mt-4">
+            <a href="index.html" class="btn btn-secondary">返回首页</a>
+        </div>
+    </div>
+</body>
+</html>

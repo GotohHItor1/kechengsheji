@@ -1,0 +1,51 @@
+body{
+    background: none;
+}
+.myimg{
+    padding-top: 30px;
+    height: 100px;
+    width: 79px;
+}
+ul,li{
+    list-style: none;
+    padding: 0px;
+    margin: 0px;
+}
+.mycolor{
+    color: black;
+}
+.row>div:nth-child(2)>ul{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.row>div:nth-child(3)>ul{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.row>div:last-child>ul{
+    display: flex;
+    justify-content: right;
+}
+.row>div:last-child{
+    text-align: right;
+}
+.row>div:first-child{
+    text-align: left;
+}
+.myul{
+    padding-top: 50px;
+}
+.myi{
+    padding-top: 50px;
+    float: right;
+}
+@media screen and (max-width: 768px) {
+    .row>div:first-child>img{
+        padding-top: 30px;
+        height: 88px;
+        width: 56px;
+    }
+    
+}
