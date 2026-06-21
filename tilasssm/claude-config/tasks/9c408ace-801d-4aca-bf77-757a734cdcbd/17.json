@@ -1,9 +1,0 @@
-{
-  "id": "17",
-  "subject": "修复 Jackson 不支持 Java 8 LocalDate 导致所有 CRUD 接口返回 500",
-  "description": "添加 jackson-datatype-jsr310 依赖并在 spring-mvc.xml 中注册 JavaTimeModule",
-  "activeForm": "修复 Jackson LocalDate 序列化问题",
-  "status": "in_progress",
-  "blocks": [],
-  "blockedBy": []
-}
