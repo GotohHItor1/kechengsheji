@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.mapper.EmpMapper">
+
+    <!-- 员工结果映射 (含部门名称) -->
+    <resultMap id="empResultMap" type="com.example.pojo.Emp">
+        <id property="id" column="id"/>
+        <result property="username" column="username"/>
+        <result property="password" column="password"/>
+        <result property="name" column="name"/>
+        <result property="gender" column="gender"/>
+        <result property="phone" column="phone"/>
+        <result property="job" column="job"/>
+        <result property="salary" column="salary"/>
+        <result property="image" column="image"/>
+        <result property="entryDate" column="entry_date"/>
+        <result property="deptId" column="dept_id"/>
+        <result property="deptName" column="dept_name"/>
+        <result property="createTime" column="create_time"/>
+        <result property="updateTime" column="update_time"/>
+    </resultMap>
+
+    <!-- 员工详情 resultMap (含工作经历) -->
+    <resultMap id="empWithExprResultMap" type="com.example.pojo.Emp" extends="empResultMap">
+        <collection property="exprList" ofType="com.example.pojo.Expr"
+                    column="id" select="com.example.mapper.ExprMapper.getByEmpId"/>
+    </resultMap>
+
+    <!-- 条件分页查询员工 -->
+    <select id="list" resultMap="empResultMap">
+        SELECT e.id, e.username, e.password, e.name, e.gender, e.phone,
+               e.job, e.salary, e.image, e.entry_date, e.dept_id,
+               d.name AS dept_name, e.create_time, e.update_time
+        FROM emp e
+        LEFT JOIN dept d ON e.dept_id = d.id
+        <where>
+            <if test="name != null and name != ''">
+                AND e.name LIKE CONCAT('%', #{name}, '%')
+            </if>
+            <if test="gender != null">
+                AND e.gender = #{gender}
+            </if>
+            <if test="begin != null and begin != ''">
+                AND e.entry_date &gt;= #{begin}
+            </if>
+            <if test="end != null and end != ''">
+                AND e.entry_date &lt;= #{end}
+            </if>
+        </where>
+        ORDER BY e.id
+    </select>
+
+    <!-- 查询全部员工 -->
+    <select id="listAll" resultMap="empResultMap">
+        SELECT e.id, e.username, e.password, e.name, e.gender, e.phone,
+               e.job, e.salary, e.image, e.entry_date, e.dept_id,
+               d.name AS dept_name, e.create_time, e.update_time
+        FROM emp e
+        LEFT JOIN dept d ON e.dept_id = d.id
+        ORDER BY e.id
+    </select>
+
+    <!-- 根据ID查询员工 (含工作经历) -->
+    <select id="getById" resultMap="empWithExprResultMap">
+        SELECT e.id, e.username, e.password, e.name, e.gender, e.phone,
+               e.job, e.salary, e.image, e.entry_date, e.dept_id,
+               d.name AS dept_name, e.create_time, e.update_time
+        FROM emp e
+        LEFT JOIN dept d ON e.dept_id = d.id
+        WHERE e.id = #{id}
+    </select>
+
+    <!-- 根据用户名查询员工 -->
+    <select id="getByUsername" resultMap="empResultMap">
+        SELECT e.id, e.username, e.password, e.name, e.gender, e.phone,
+               e.job, e.salary, e.image, e.entry_date, e.dept_id,
+               d.name AS dept_name, e.create_time, e.update_time
+        FROM emp e
+        LEFT JOIN dept d ON e.dept_id = d.id
+        WHERE e.username = #{username}
+    </select>
+
+    <!-- 新增员工 -->
+    <insert id="insert" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO emp (username, password, name, gender, phone, job, salary, image, entry_date, dept_id)
+        VALUES (#{username}, #{password}, #{name}, #{gender}, #{phone}, #{job}, #{salary}, #{image}, #{entryDate}, #{deptId})
+    </insert>
+
+    <!-- 批量删除员工 -->
+    <delete id="deleteByIds">
+        DELETE FROM emp WHERE id IN
+        <foreach collection="ids" item="id" open="(" close=")" separator=",">
+            #{id}
+        </foreach>
+    </delete>
+
+    <!-- 修改员工 -->
+    <update id="update">
+        UPDATE emp
+        <set>
+            <if test="username != null and username != ''">username = #{username},</if>
+            <if test="name != null and name != ''">name = #{name},</if>
+            <if test="gender != null">gender = #{gender},</if>
+            <if test="phone != null">phone = #{phone},</if>
+            <if test="job != null">job = #{job},</if>
+            <if test="salary != null">salary = #{salary},</if>
+            <if test="image != null">image = #{image},</if>
+            <if test="entryDate != null">entry_date = #{entryDate},</if>
+            <if test="deptId != null">dept_id = #{deptId},</if>
+        </set>
+        WHERE id = #{id}
+    </update>
+
+    <!-- 员工性别统计 -->
+    <select id="countByGender" resultType="java.util.HashMap">
+        SELECT CASE WHEN gender = 1 THEN '男' ELSE '女' END AS name,
+               COUNT(*) AS value
+        FROM emp
+        GROUP BY gender
+    </select>
+
+    <!-- 员工职位统计 -->
+    <select id="countByJob" resultType="java.util.HashMap">
+        SELECT CASE job
+                 WHEN 1 THEN '班主任'
+                 WHEN 2 THEN '讲师'
+                 WHEN 3 THEN '学工主管'
+                 WHEN 4 THEN '教研主管'
+                 ELSE '其他'
+               END AS name,
+               COUNT(*) AS value
+        FROM emp
+        GROUP BY job
+    </select>
+
+</mapper>
