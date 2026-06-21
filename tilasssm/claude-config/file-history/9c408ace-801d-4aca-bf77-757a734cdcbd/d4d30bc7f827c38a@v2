@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.mapper.StudentMapper">
+
+    <!-- 学员结果映射 (含班级名称) -->
+    <resultMap id="studentResultMap" type="com.example.pojo.Student">
+        <id property="id" column="id"/>
+        <result property="name" column="name"/>
+        <result property="gender" column="gender"/>
+        <result property="phone" column="phone"/>
+        <result property="degree" column="degree"/>
+        <result property="violation" column="violation"/>
+        <result property="score" column="score"/>
+        <result property="clazzId" column="clazz_id"/>
+        <result property="clazzName" column="clazz_name"/>
+        <result property="createTime" column="create_time"/>
+        <result property="updateTime" column="update_time"/>
+    </resultMap>
+
+    <!-- 条件分页查询学员 -->
+    <select id="list" resultMap="studentResultMap">
+        SELECT s.id, s.name, s.gender, s.phone, s.degree,
+               s.violation, s.score, s.clazz_id,
+               c.name AS clazz_name, s.create_time, s.update_time
+        FROM student s
+        LEFT JOIN clazz c ON s.clazz_id = c.id
+        <where>
+            <if test="name != null and name != ''">
+                AND s.name LIKE CONCAT('%', #{name}, '%')
+            </if>
+            <if test="degree != null">
+                AND s.degree = #{degree}
+            </if>
+            <if test="clazzId != null">
+                AND s.clazz_id = #{clazzId}
+            </if>
+        </where>
+        ORDER BY s.id
+    </select>
+
+    <!-- 根据ID查询学员 -->
+    <select id="getById" resultMap="studentResultMap">
+        SELECT s.id, s.name, s.gender, s.phone, s.degree,
+               s.violation, s.score, s.clazz_id,
+               c.name AS clazz_name, s.create_time, s.update_time
+        FROM student s
+        LEFT JOIN clazz c ON s.clazz_id = c.id
+        WHERE s.id = #{id}
+    </select>
+
+    <!-- 新增学员 -->
+    <insert id="insert" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO student (name, gender, phone, degree, clazz_id)
+        VALUES (#{name}, #{gender}, #{phone}, #{degree}, #{clazzId})
+    </insert>
+
+    <!-- 批量删除学员 -->
+    <delete id="deleteByIds">
+        DELETE FROM student WHERE id IN
+        <foreach collection="ids" item="id" open="(" close=")" separator=",">
+            #{id}
+        </foreach>
+    </delete>
+
+    <!-- 修改学员 -->
+    <update id="update">
+        UPDATE student
+        <set>
+            <if test="name != null and name != ''">name = #{name},</if>
+            <if test="gender != null">gender = #{gender},</if>
+            <if test="phone != null">phone = #{phone},</if>
+            <if test="degree != null">degree = #{degree},</if>
+            <if test="clazzId != null">clazz_id = #{clazzId},</if>
+        </set>
+        WHERE id = #{id}
+    </update>
+
+    <!-- 学员违纪扣分 -->
+    <update id="updateViolation">
+        UPDATE student
+        SET violation = violation + 1, score = score + #{score}
+        WHERE id = #{id}
+    </update>
+
+    <!-- 学员学历统计 -->
+    <select id="countByDegree" resultType="java.util.HashMap">
+        SELECT CASE degree
+                 WHEN 1 THEN '初中'
+                 WHEN 2 THEN '高中'
+                 WHEN 3 THEN '大专'
+                 WHEN 4 THEN '本科'
+                 WHEN 5 THEN '硕士'
+                 WHEN 6 THEN '博士'
+                 ELSE '其他'
+               END AS name,
+               COUNT(*) AS value
+        FROM student
+        GROUP BY degree
+    </select>
+
+</mapper>

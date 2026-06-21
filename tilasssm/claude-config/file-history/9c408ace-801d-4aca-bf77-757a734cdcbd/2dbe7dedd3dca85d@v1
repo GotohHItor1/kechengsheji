@@ -1,0 +1,45 @@
+package com.example.pojo;
+
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+
+/**
+ * 班级实体类
+ */
+public class Clazz {
+    private Integer id;
+    private String name;
+    private String room;
+    private LocalDate beginDate;
+    private LocalDate endDate;
+    private Integer studentNum;
+    private Short status;      // 1-在读, 2-已结课
+    private LocalDateTime createTime;
+    private LocalDateTime updateTime;
+
+    public Clazz() {}
+
+    public Integer getId() { return id; }
+    public void setId(Integer id) { this.id = id; }
+    public String getName() { return name; }
+    public void setName(String name) { this.name = name; }
+    public String getRoom() { return room; }
+    public void setRoom(String room) { this.room = room; }
+    public LocalDate getBeginDate() { return beginDate; }
+    public void setBeginDate(LocalDate beginDate) { this.beginDate = beginDate; }
+    public LocalDate getEndDate() { return endDate; }
+    public void setEndDate(LocalDate endDate) { this.endDate = endDate; }
+    public Integer getStudentNum() { return studentNum; }
+    public void setStudentNum(Integer studentNum) { this.studentNum = studentNum; }
+    public Short getStatus() { return status; }
+    public void setStatus(Short status) { this.status = status; }
+    public LocalDateTime getCreateTime() { return createTime; }
+    public void setCreateTime(LocalDateTime createTime) { this.createTime = createTime; }
+    public LocalDateTime getUpdateTime() { return updateTime; }
+    public void setUpdateTime(LocalDateTime updateTime) { this.updateTime = updateTime; }
+
+    @Override
+    public String toString() {
+        return "Clazz{id=" + id + ", name='" + name + '\'' + '}';
+    }
+}

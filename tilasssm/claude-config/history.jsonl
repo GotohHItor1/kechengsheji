@@ -1,0 +1,18 @@
+{"display":"/config","pastedContents":{},"timestamp":1781676121938,"project":"D:\\code\\idea\\javacode\\tilasssm","sessionId":"30fdada8-3f55-419a-97b2-74edc3b4a1ab"}
+{"display":"阅读这个项目路径的README文档，完成开发","pastedContents":{},"timestamp":1781676276786,"project":"D:\\code\\idea\\javacode\\tilasssm","sessionId":"ba1e279e-b506-4150-8c1a-1137e01a698e"}
+{"display":"阅读这个项目的README文档，完成开发","pastedContents":{},"timestamp":1781676403820,"project":"D:\\code\\idea\\javacode\\tilasssm","sessionId":"9c408ace-801d-4aca-bf77-757a734cdcbd"}
+{"display":"你还没给我设置一个启动文件让我启动，还是说ssm框架不需要启动文件，如果是的话请告诉我怎么启动这个项目","pastedContents":{},"timestamp":1781677086753,"project":"D:\\code\\idea\\javacode\\tilasssm","sessionId":"9c408ace-801d-4aca-bf77-757a734cdcbd"}
+{"display":"、","pastedContents":{},"timestamp":1781677086929,"project":"D:\\code\\idea\\javacode\\tilasssm","sessionId":"9c408ace-801d-4aca-bf77-757a734cdcbd"}
+{"display":"数据库的测试数据 我已经有了，现在我在idea已经连接上数据库了，名字是tilas，请根据数据库的变量名对项目的变量名进行修改使得项目能正确操作数据库","pastedContents":{},"timestamp":1781677895672,"project":"D:\\code\\idea\\javacode\\tilasssm","sessionId":"9c408ace-801d-4aca-bf77-757a734cdcbd"}
+{"display":"现在这个项目还有一些功能还没开发，我将这些功能放在了Tlias接口开发文档-README文档，但这个文档可能有重复的功能，请你根据这个项目已有功能补全这个项目的功能","pastedContents":{},"timestamp":1781680133672,"project":"D:\\code\\idea\\javacode\\tilasssm","sessionId":"9c408ace-801d-4aca-bf77-757a734cdcbd"}
+{"display":"报错了，[Pasted text #1 +44 lines]","pastedContents":{"1":{"id":1,"type":"text","contentHash":"429cff9f25b026a2"}},"timestamp":1781680959820,"project":"D:\\code\\idea\\javacode\\tilasssm","sessionId":"9c408ace-801d-4aca-bf77-757a734cdcbd"}
+{"display":"我是通过idea的tomcat直接启动的，网页的报错是[Pasted text #2 +5 lines]","pastedContents":{"2":{"id":2,"type":"text","content":"HTTP状态 404 - 未找到\n类型 状态报告\n\n描述 源服务器未能找到目标资源的表示或者是不愿公开一个已经存在的资源表示。\n\nApache Tomcat/9.0.118"}},"timestamp":1781681061987,"project":"D:\\code\\idea\\javacode\\tilasssm","sessionId":"9c408ace-801d-4aca-bf77-757a734cdcbd"}
+{"display":"/compact","pastedContents":{},"timestamp":1781681495966,"project":"D:\\code\\idea\\javacode\\tilasssm","sessionId":"9c408ace-801d-4aca-bf77-757a734cdcbd"}
+{"display":"[Pasted text #1 +48 lines]","pastedContents":{"1":{"id":1,"type":"text","contentHash":"bdc51c2d8eee9a7f"}},"timestamp":1781681725159,"project":"D:\\code\\idea\\javacode\\tilasssm","sessionId":"9c408ace-801d-4aca-bf77-757a734cdcbd"}
+{"display":"[Pasted text #1 +27 lines]","pastedContents":{"1":{"id":1,"type":"text","contentHash":"5dc31e8218b8a2e7"}},"timestamp":1781681945662,"project":"D:\\code\\idea\\javacode\\tilasssm","sessionId":"9c408ace-801d-4aca-bf77-757a734cdcbd"}
+{"display":"我的前端连不上我的后端怎么办","pastedContents":{},"timestamp":1781682210293,"project":"D:\\code\\idea\\javacode\\tilasssm","sessionId":"9c408ace-801d-4aca-bf77-757a734cdcbd"}
+{"display":"/compact","pastedContents":{},"timestamp":1781682359324,"project":"D:\\code\\idea\\javacode\\tilasssm","sessionId":"9c408ace-801d-4aca-bf77-757a734cdcbd"}
+{"display":"我的前端部署在nginx服务器上，我的nginx服务器在D:\\code\\nginx\\nginx-1.22.0-web，请你帮我继续解决前端连不上后端的问题","pastedContents":{},"timestamp":1781683341124,"project":"D:\\code\\idea\\javacode\\tilasssm","sessionId":"9c408ace-801d-4aca-bf77-757a734cdcbd"}
+{"display":"还是连接不上，怎么回事？","pastedContents":{},"timestamp":1781683594453,"project":"D:\\code\\idea\\javacode\\tilasssm","sessionId":"9c408ace-801d-4aca-bf77-757a734cdcbd"}
+{"display":"我将这个项目的前端已经拷贝在项目的目录里了，根据后端排查一下问题","pastedContents":{},"timestamp":1781684313217,"project":"D:\\code\\idea\\javacode\\tilasssm","sessionId":"9c408ace-801d-4aca-bf77-757a734cdcbd"}
+{"display":"现在又出现了一个问题就是前端只能显示统计数据，有关员工部门和学生的数据全都没有","pastedContents":{},"timestamp":1781685194987,"project":"D:\\code\\idea\\javacode\\tilasssm","sessionId":"9c408ace-801d-4aca-bf77-757a734cdcbd"}

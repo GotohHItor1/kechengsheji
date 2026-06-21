@@ -1,0 +1,44 @@
+NOTE: Picked up JDK_JAVA_OPTIONS:  --add-opens=java.base/java.lang=ALL-UNNAMED --add-opens=java.base/java.lang.invoke=ALL-UNNAMED --add-opens=java.base/java.lang.reflect=ALL-UNNAMED --add-opens=java.base/java.io=ALL-UNNAMED --add-opens=java.base/java.util=ALL-UNNAMED --add-opens=java.base/java.util.concurrent=ALL-UNNAMED --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+17-Jun-2026 15:21:39.082 淇℃伅 [main] org.apache.catalina.startup.VersionLoggerListener.log Server.鏈嶅姟鍣ㄧ増鏈�: Apache Tomcat/9.0.118
+17-Jun-2026 15:21:39.083 淇℃伅 [main] org.apache.catalina.startup.VersionLoggerListener.log 鏈嶅姟鍣ㄦ瀯寤�:        May 1 2026 19:30:30 UTC
+17-Jun-2026 15:21:39.084 淇℃伅 [main] org.apache.catalina.startup.VersionLoggerListener.log 鏈嶅姟鍣ㄧ増鏈彿:      9.0.118.0
+17-Jun-2026 15:21:39.084 淇℃伅 [main] org.apache.catalina.startup.VersionLoggerListener.log 鎿嶄綔绯荤粺鍚嶇О:      Windows 11
+17-Jun-2026 15:21:39.084 淇℃伅 [main] org.apache.catalina.startup.VersionLoggerListener.log OS.鐗堟湰:           10.0
+17-Jun-2026 15:21:39.084 淇℃伅 [main] org.apache.catalina.startup.VersionLoggerListener.log 鏋舵瀯:              amd64
+17-Jun-2026 15:21:39.085 淇℃伅 [main] org.apache.catalina.startup.VersionLoggerListener.log Java 鐜鍙橀噺:     C:\Program Files\Microsoft\jdk-17.0.11.9-hotspot
+17-Jun-2026 15:21:39.085 淇℃伅 [main] org.apache.catalina.startup.VersionLoggerListener.log Java铏氭嫙鏈虹増鏈�:    17.0.11+9-LTS
+17-Jun-2026 15:21:39.085 淇℃伅 [main] org.apache.catalina.startup.VersionLoggerListener.log JVM.渚涘簲鍟�:        Microsoft
+17-Jun-2026 15:21:39.085 淇℃伅 [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:     C:\Users\Bing\AppData\Local\JetBrains\IntelliJIdea2024.1\tomcat\da020853-1cd1-452a-86c7-5b66b7ce1382
+17-Jun-2026 15:21:39.085 淇℃伅 [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:     D:\code\tomcat\apache-tomcat-9.0.118
+17-Jun-2026 15:21:39.085 淇℃伅 [main] org.apache.catalina.startup.VersionLoggerListener.log 鍛戒护琛屽弬鏁帮細       --add-opens=java.base/java.lang=ALL-UNNAMED
+17-Jun-2026 15:21:39.085 淇℃伅 [main] org.apache.catalina.startup.VersionLoggerListener.log 鍛戒护琛屽弬鏁帮細       --add-opens=java.base/java.lang.invoke=ALL-UNNAMED
+17-Jun-2026 15:21:39.085 淇℃伅 [main] org.apache.catalina.startup.VersionLoggerListener.log 鍛戒护琛屽弬鏁帮細       --add-opens=java.base/java.lang.reflect=ALL-UNNAMED
+17-Jun-2026 15:21:39.085 淇℃伅 [main] org.apache.catalina.startup.VersionLoggerListener.log 鍛戒护琛屽弬鏁帮細       --add-opens=java.base/java.io=ALL-UNNAMED
+17-Jun-2026 15:21:39.085 淇℃伅 [main] org.apache.catalina.startup.VersionLoggerListener.log 鍛戒护琛屽弬鏁帮細       --add-opens=java.base/java.util=ALL-UNNAMED
+17-Jun-2026 15:21:39.085 淇℃伅 [main] org.apache.catalina.startup.VersionLoggerListener.log 鍛戒护琛屽弬鏁帮細       --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+17-Jun-2026 15:21:39.086 淇℃伅 [main] org.apache.catalina.startup.VersionLoggerListener.log 鍛戒护琛屽弬鏁帮細       --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+17-Jun-2026 15:21:39.086 淇℃伅 [main] org.apache.catalina.startup.VersionLoggerListener.log 鍛戒护琛屽弬鏁帮細       -Djava.util.logging.config.file=C:\Users\Bing\AppData\Local\JetBrains\IntelliJIdea2024.1\tomcat\da020853-1cd1-452a-86c7-5b66b7ce1382\conf\logging.properties
+17-Jun-2026 15:21:39.086 淇℃伅 [main] org.apache.catalina.startup.VersionLoggerListener.log 鍛戒护琛屽弬鏁帮細       -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+17-Jun-2026 15:21:39.086 淇℃伅 [main] org.apache.catalina.startup.VersionLoggerListener.log 鍛戒护琛屽弬鏁帮細       -Dcom.sun.management.jmxremote=
+17-Jun-2026 15:21:39.086 淇℃伅 [main] org.apache.catalina.startup.VersionLoggerListener.log 鍛戒护琛屽弬鏁帮細       -Dcom.sun.management.jmxremote.port=1099
+17-Jun-2026 15:21:39.086 淇℃伅 [main] org.apache.catalina.startup.VersionLoggerListener.log 鍛戒护琛屽弬鏁帮細       -Dcom.sun.management.jmxremote.ssl=false
+17-Jun-2026 15:21:39.086 淇℃伅 [main] org.apache.catalina.startup.VersionLoggerListener.log 鍛戒护琛屽弬鏁帮細       -Dcom.sun.management.jmxremote.password.file=C:\Users\Bing\AppData\Local\JetBrains\IntelliJIdea2024.1\tomcat\da020853-1cd1-452a-86c7-5b66b7ce1382\jmxremote.password
+17-Jun-2026 15:21:39.086 淇℃伅 [main] org.apache.catalina.startup.VersionLoggerListener.log 鍛戒护琛屽弬鏁帮細       -Dcom.sun.management.jmxremote.access.file=C:\Users\Bing\AppData\Local\JetBrains\IntelliJIdea2024.1\tomcat\da020853-1cd1-452a-86c7-5b66b7ce1382\jmxremote.access
+17-Jun-2026 15:21:39.087 淇℃伅 [main] org.apache.catalina.startup.VersionLoggerListener.log 鍛戒护琛屽弬鏁帮細       -Djava.rmi.server.hostname=127.0.0.1
+17-Jun-2026 15:21:39.087 淇℃伅 [main] org.apache.catalina.startup.VersionLoggerListener.log 鍛戒护琛屽弬鏁帮細       -Djdk.tls.ephemeralDHKeySize=2048
+17-Jun-2026 15:21:39.087 淇℃伅 [main] org.apache.catalina.startup.VersionLoggerListener.log 鍛戒护琛屽弬鏁帮細       -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+17-Jun-2026 15:21:39.087 淇℃伅 [main] org.apache.catalina.startup.VersionLoggerListener.log 鍛戒护琛屽弬鏁帮細       -Dsun.io.useCanonCaches=false
+17-Jun-2026 15:21:39.087 淇℃伅 [main] org.apache.catalina.startup.VersionLoggerListener.log 鍛戒护琛屽弬鏁帮細       -Dignore.endorsed.dirs=
+17-Jun-2026 15:21:39.087 淇℃伅 [main] org.apache.catalina.startup.VersionLoggerListener.log 鍛戒护琛屽弬鏁帮細       -Dcatalina.base=C:\Users\Bing\AppData\Local\JetBrains\IntelliJIdea2024.1\tomcat\da020853-1cd1-452a-86c7-5b66b7ce1382
+17-Jun-2026 15:21:39.087 淇℃伅 [main] org.apache.catalina.startup.VersionLoggerListener.log 鍛戒护琛屽弬鏁帮細       -Dcatalina.home=D:\code\tomcat\apache-tomcat-9.0.118
+17-Jun-2026 15:21:39.087 淇℃伅 [main] org.apache.catalina.startup.VersionLoggerListener.log 鍛戒护琛屽弬鏁帮細       -Djava.io.tmpdir=D:\code\tomcat\apache-tomcat-9.0.118\temp
+17-Jun-2026 15:21:39.098 淇℃伅 [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent 鍦╦ava.library.path:[C:\Program Files\Microsoft\jdk-17.0.11.9-hotspot\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;D:\ctf\python310\Scripts\;D:\ctf\python310\;D:\ctf\vmware\bin\;C:\Program Files\Microsoft\jdk-17.0.11.9-hotspot\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\dotnet\;C:\Program Files\NVIDIA Corporation\NVIDIA app\NvDLISR;C:\Program Files\Microsoft SQL Server\150\Tools\Binn\;D:\MySQL\MySQL Server 8.0\bin;D:\code\vscode\MinGW\bin;D:\ctf\xshell\;D:\sunshine;D:\sunshine\tools;D:\涓嬭浇鐨勫簲鐢╘git\Git\cmd;D:\code\claudecode\;C:\Users\Bing\AppData\Local\Programs\Python\Python313\Scripts\;C:\Users\Bing\AppData\Local\Programs\Python\Python313\;C:\Users\Bing\AppData\Local\Microsoft\WindowsApps;D:\code\python\pycharm\PyCharm 2024.3.1.1\bin;;D:\code\c++\clion\CLion 2024.3.1.1\bin;;D:\code\idea\IntelliJ IDEA Community Edition 2025.1\bin;;C:\Users\Bing\AppData\Local\Microsoft\WindowsApps;D:\code\vscode\Microsoft VS Code\bin;D:\code\idea\IntelliJ IDEA 2024.1.7\bin;;D:\code\claudecode;C:\Users\Bing\AppData\Roaming\npm;.]涓婃壘涓嶅埌鍩轰簬APR鐨凙pache Tomcat鏈満搴擄紝璇ュ簱鍏佽鍦ㄧ敓浜х幆澧冧腑鑾峰緱鏈�浣虫�ц兘
+17-Jun-2026 15:21:39.213 淇℃伅 [main] org.apache.coyote.AbstractProtocol.init 鍒濆鍖栧崗璁鐞嗗櫒 ["http-nio-8080"]
+17-Jun-2026 15:21:39.226 淇℃伅 [main] org.apache.catalina.startup.Catalina.load 鏈嶅姟鍣ㄥ湪[339]姣鍐呭垵濮嬪寲
+17-Jun-2026 15:21:39.271 淇℃伅 [main] org.apache.catalina.core.StandardService.startInternal 姝ｅ湪鍚姩鏈嶅姟[Catalina]
+17-Jun-2026 15:21:39.271 淇℃伅 [main] org.apache.catalina.core.StandardEngine.startInternal 姝ｅ湪鍚姩 Servlet 寮曟搸锛歔Apache Tomcat/9.0.118]
+17-Jun-2026 15:21:39.283 淇℃伅 [main] org.apache.coyote.AbstractProtocol.start 寮�濮嬪崗璁鐞嗗彞鏌刐"http-nio-8080"]
+17-Jun-2026 15:21:39.328 淇℃伅 [main] org.apache.catalina.startup.Catalina.start [102]姣鍚庢湇鍔″櫒鍚姩
+已连接到服务器
+17-Jun-2026 15:21:49.290 淇℃伅 [Catalina-utility-1] org.apache.catalina.startup.HostConfig.deployDirectory 鎶妛eb 搴旂敤绋嬪簭閮ㄧ讲鍒扮洰褰� [D:\code\tomcat\apache-tomcat-9.0.118\webapps\manager]
+17-Jun-2026 15:21:49.518 淇℃伅 [Catalina-utility-1] org.apache.catalina.startup.HostConfig.deployDirectory Web搴旂敤绋嬪簭鐩綍[D:\code\tomcat\apache-tomcat-9.0.118\webapps\manager]鐨勯儴缃插凡鍦╗228]姣鍐呭畬鎴�

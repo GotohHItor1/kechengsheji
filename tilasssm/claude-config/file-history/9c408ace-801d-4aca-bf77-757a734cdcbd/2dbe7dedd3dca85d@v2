@@ -1,0 +1,60 @@
+package com.example.pojo;
+
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+
+/**
+ * 班级实体类
+ * 对应数据库 clazz 表
+ */
+public class Clazz {
+    private Integer id;
+    private String name;
+    private String room;
+    private LocalDate beginDate;
+    private LocalDate endDate;
+    /** 班主任ID (关联 emp 表) */
+    private Integer masterId;
+    /** 班主任姓名 (关联查询) */
+    private String masterName;
+    /** 学科: 1-JavaEE, 2-前端, 3-大数据, 4-Python, 5-Go */
+    private Integer subject;
+    /** 状态: 0-未开班, 1-在读, 2-已结课 */
+    private Short status;
+    /** 班级人数 (通过 COUNT(student) 统计，非数据库字段) */
+    private Integer studentNum;
+    private LocalDateTime createTime;
+    private LocalDateTime updateTime;
+
+    public Clazz() {}
+
+    public Integer getId() { return id; }
+    public void setId(Integer id) { this.id = id; }
+    public String getName() { return name; }
+    public void setName(String name) { this.name = name; }
+    public String getRoom() { return room; }
+    public void setRoom(String room) { this.room = room; }
+    public LocalDate getBeginDate() { return beginDate; }
+    public void setBeginDate(LocalDate beginDate) { this.beginDate = beginDate; }
+    public LocalDate getEndDate() { return endDate; }
+    public void setEndDate(LocalDate endDate) { this.endDate = endDate; }
+    public Integer getMasterId() { return masterId; }
+    public void setMasterId(Integer masterId) { this.masterId = masterId; }
+    public String getMasterName() { return masterName; }
+    public void setMasterName(String masterName) { this.masterName = masterName; }
+    public Integer getSubject() { return subject; }
+    public void setSubject(Integer subject) { this.subject = subject; }
+    public Short getStatus() { return status; }
+    public void setStatus(Short status) { this.status = status; }
+    public Integer getStudentNum() { return studentNum; }
+    public void setStudentNum(Integer studentNum) { this.studentNum = studentNum; }
+    public LocalDateTime getCreateTime() { return createTime; }
+    public void setCreateTime(LocalDateTime createTime) { this.createTime = createTime; }
+    public LocalDateTime getUpdateTime() { return updateTime; }
+    public void setUpdateTime(LocalDateTime updateTime) { this.updateTime = updateTime; }
+
+    @Override
+    public String toString() {
+        return "Clazz{id=" + id + ", name='" + name + '\'' + '}';
+    }
+}
